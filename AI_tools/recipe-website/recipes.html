@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ספר המתכונים - רשימת מתכונים</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🍳 ספר המתכונים</h1>
+            <div class="header-actions">
+                <span id="welcomeUser" class="welcome-text"></span>
+                <button id="settingsBtn" class="btn btn-secondary">⚙️ הגדרות</button>
+                <button id="logoutBtn" class="btn btn-outline">יציאה</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="חפש מתכון...">
+                <button id="searchBtn" class="btn btn-primary">🔍</button>
+            </div>
+            <button id="addRecipeBtn" class="btn btn-success">➕ הוסף מתכון חדש</button>
+        </div>
+
+        <div class="recipes-grid" id="recipesGrid">
+            <!-- המתכונים יוצגו כאן -->
+        </div>
+    </main>
+
+    <!-- מודל להוספת מתכון חדש -->
+    <div id="addRecipeModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>הוסף מתכון חדש</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="addRecipeForm">
+                <div class="form-group">
+                    <label for="recipeName">שם המתכון:</label>
+                    <input type="text" id="recipeName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="recipeImage">תמונה (URL):</label>
+                    <input type="url" id="recipeImage" placeholder="https://example.com/image.jpg">
+                </div>
+                
+                <div class="form-group">
+                    <label for="recipeIngredients">רכיבים (כל רכיב בשורה נפרדת):</label>
+                    <textarea id="recipeIngredients" rows="5" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="recipeInstructions">הוראות הכנה (כל שלב בשורה נפרדת):</label>
+                    <textarea id="recipeInstructions" rows="8" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="recipeTime">זמן הכנה (דקות):</label>
+                    <input type="number" id="recipeTime" min="1" required>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-primary">שמור מתכון</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeAddRecipeModal()">ביטול</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

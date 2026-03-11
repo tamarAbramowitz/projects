@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ספר המתכונים - הגדרות</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <button id="backBtn" class="btn btn-outline">← חזור</button>
+            <h1>⚙️ הגדרות אישיות</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="settings-container">
+            <form id="settingsForm" class="settings-form">
+                <div class="settings-section">
+                    <h2>🔊 הגדרות הקראה קולית</h2>
+                    
+                    <div class="form-group">
+                        <label for="readingSpeed">מהירות הקראה:</label>
+                        <input type="range" id="readingSpeed" min="0.5" max="2" step="0.1" value="1">
+                        <span id="speedValue">1.0x</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pauseBetweenSteps">זמן המתנה בין שלבים (שניות):</label>
+                        <input type="range" id="pauseBetweenSteps" min="1" max="10" step="1" value="3">
+                        <span id="pauseValue">3 שניות</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="voicePitch">גובה הקול:</label>
+                        <input type="range" id="voicePitch" min="0.5" max="2" step="0.1" value="1">
+                        <span id="pitchValue">1.0</span>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h2>🎨 הגדרות תצוגה</h2>
+                    
+                    <div class="form-group">
+                        <label for="themeSelect">ערכת צבעים:</label>
+                        <select id="themeSelect">
+                            <option value="light">בהיר</option>
+                            <option value="dark">כהה</option>
+                            <option value="auto">אוטומטי (לפי המערכת)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fontSize">גודל טקסט:</label>
+                        <select id="fontSize">
+                            <option value="small">קטן</option>
+                            <option value="medium">בינוני</option>
+                            <option value="large">גדול</option>
+                            <option value="extra-large">גדול מאוד</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="highContrast">ניגודיות גבוהה:</label>
+                        <input type="checkbox" id="highContrast">
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h2>🍳 הגדרות מתכונים</h2>
+                    
+                    <div class="form-group">
+                        <label for="autoScroll">גלילה אוטומטית לשלב הנוכחי:</label>
+                        <input type="checkbox" id="autoScroll" checked>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="highlightCurrentStep">הדגש שלב נוכחי:</label>
+                        <input type="checkbox" id="highlightCurrentStep" checked>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="showTimer">הצג טיימר לכל שלב:</label>
+                        <input type="checkbox" id="showTimer">
+                    </div>
+                </div>
+
+                <div class="settings-actions">
+                    <button type="submit" class="btn btn-primary">שמור הגדרות</button>
+                    <button type="button" id="resetBtn" class="btn btn-secondary">איפוס להגדרות ברירת מחדל</button>
+                    <button type="button" id="testVoiceBtn" class="btn btn-outline">🔊 בדיקת קול</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
