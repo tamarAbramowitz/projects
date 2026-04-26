@@ -1,0 +1,8 @@
+=== Books ===
+Harry Potter
+Clean Code
+The Lion King
+Spider-Man
+The Hobbit
+=== Magazines ===
+Time - Issue 55
